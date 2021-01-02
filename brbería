@@ -1,1 +1,82 @@
-<mxfile host="app.diagrams.net" modified="2020-12-29T16:13:09.267Z" agent="5.0 (X11)" version="14.1.3" etag="bO7jo4m8UbTGvUZFfTXQ" type="github"><diagram id="wfKHgSXNFdyfBBLeD1Yk">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-01-02T17:35:01.082Z" agent="5.0 (X11)" etag="lNgZ4THX58V5IZHTVnJe" version="14.1.7" type="github">
+  <diagram id="wfKHgSXNFdyfBBLeD1Yk" name="Page-1">
+    <mxGraphModel dx="1795" dy="1592" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="fAp-Rm3KbAO_wH94ELnh-1" value="Barbería" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-90" width="385" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="fAp-Rm3KbAO_wH94ELnh-2" value="+id_barberia INT(2) UNSIGNED  PRIMARY KEY AUTO_INCREMENT&#xa;+nombre VARCHAR(256)&#xa;+direccion VARCHAR(255)&#xa;+latitud FLOAT&#xa;+longitud FLOAT&#xa;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="fAp-Rm3KbAO_wH94ELnh-1">
+          <mxGeometry y="30" width="385" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="fAp-Rm3KbAO_wH94ELnh-5" value="FOTO_BARBERIA" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-500" width="352" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="fAp-Rm3KbAO_wH94ELnh-6" value="+id_foto INT(2) UNSIGNED PRIMARY KEY AUTO_INCREMENT&#xa;+id_barberia INT(2) UNSIGNED NOT NULL&#xa;+url TEXT&#xa;+descripcion VARCHAR(255)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="fAp-Rm3KbAO_wH94ELnh-5">
+          <mxGeometry y="30" width="352" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="fAp-Rm3KbAO_wH94ELnh-7" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERmandOne;exitX=0.003;exitY=0.644;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="fAp-Rm3KbAO_wH94ELnh-2" target="fAp-Rm3KbAO_wH94ELnh-5">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="140" y="210" as="sourcePoint" />
+            <mxPoint x="240" y="110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fAp-Rm3KbAO_wH94ELnh-12" value="BARBERO" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-80" y="260" width="385" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="fAp-Rm3KbAO_wH94ELnh-13" value="+id_barbero INT(2) UNSIGNED  PRIMARY KEY AUTO_INCREMENT&#xa;+nombre VARCHAR(255)&#xa;+sobrenombre VARCHAR(255)+latitud FLOAT&#xa;+foto_personal TEXT&#xa;+activo ENUM(‘1’,’0’) NOT NULL&#xa;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="fAp-Rm3KbAO_wH94ELnh-12">
+          <mxGeometry y="30" width="385" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="fAp-Rm3KbAO_wH94ELnh-14" value="FOTO_BARBERO" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-500" y="280" width="352" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="fAp-Rm3KbAO_wH94ELnh-15" value="+id_foto INT(2) UNSIGNED PRIMARY KEY AUTO_INCREMENT&#xa;+id_barbero INT(2) UNSIGNED NOT NULL&#xa;+url TEXT&#xa;+descripcion VARCHAR(255)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="fAp-Rm3KbAO_wH94ELnh-14">
+          <mxGeometry y="30" width="352" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="fAp-Rm3KbAO_wH94ELnh-16" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERmandOne;exitX=0.003;exitY=0.644;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="fAp-Rm3KbAO_wH94ELnh-13" target="fAp-Rm3KbAO_wH94ELnh-14">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="150" y="470" as="sourcePoint" />
+            <mxPoint x="250" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fAp-Rm3KbAO_wH94ELnh-18" value="PRODUCTO" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-80" y="510" width="385" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="fAp-Rm3KbAO_wH94ELnh-19" value="+id_producto INT(2) UNSIGNED  PRIMARY KEY AUTO_INCREMENT&#xa;+marca VARCHAR(100)&#xa;+precio FLOAT&#xa;+valoracion INT(2)&#xa;+desc_corta VARCHAR(100)&#xa;+desc_larga VARCHAR(255)&#xa;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="fAp-Rm3KbAO_wH94ELnh-18">
+          <mxGeometry y="30" width="385" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="fAp-Rm3KbAO_wH94ELnh-20" value="FOTO_PRODUCTO" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-500" y="520" width="352" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="fAp-Rm3KbAO_wH94ELnh-21" value="+id_foto INT(2) UNSIGNED PRIMARY KEY AUTO_INCREMENT&#xa;+id_producto INT(2) UNSIGNED NOT NULL&#xa;+url TEXT&#xa;+descripcion VARCHAR(255)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="fAp-Rm3KbAO_wH94ELnh-20">
+          <mxGeometry y="30" width="352" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="fAp-Rm3KbAO_wH94ELnh-22" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERmandOne;exitX=0.003;exitY=0.644;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="fAp-Rm3KbAO_wH94ELnh-19" target="fAp-Rm3KbAO_wH94ELnh-20">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="150" y="710" as="sourcePoint" />
+            <mxPoint x="250" y="610" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fAp-Rm3KbAO_wH94ELnh-23" value="SERVICIO" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-80" y="760" width="385" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="fAp-Rm3KbAO_wH94ELnh-24" value="+id_servicio INT(2) UNSIGNED  PRIMARY KEY AUTO_INCREMENT&#xa;+marca VARCHAR(100)&#xa;+precio FLOAT&#xa;+ tiempo_servicio VARCHAR(20)+desc_corta VARCHAR(100)&#xa;+desc_larga VARCHAR(255)&#xa;+activo ENUM(‘1’,’0’) NOT NULL&#xa;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="fAp-Rm3KbAO_wH94ELnh-23">
+          <mxGeometry y="30" width="385" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="fAp-Rm3KbAO_wH94ELnh-25" value="FOTO_PRODUCTO" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-500" y="770" width="352" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="fAp-Rm3KbAO_wH94ELnh-26" value="+id_foto INT(2) UNSIGNED PRIMARY KEY AUTO_INCREMENT&#xa;+id_servicio INT(2) UNSIGNED NOT NULL&#xa;+url TEXT&#xa;+descripcion VARCHAR(255)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="fAp-Rm3KbAO_wH94ELnh-25">
+          <mxGeometry y="30" width="352" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="fAp-Rm3KbAO_wH94ELnh-27" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERmandOne;exitX=0.003;exitY=0.644;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="fAp-Rm3KbAO_wH94ELnh-24" target="fAp-Rm3KbAO_wH94ELnh-25">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="150" y="960" as="sourcePoint" />
+            <mxPoint x="250" y="860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
